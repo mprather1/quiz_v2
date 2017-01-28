@@ -10,9 +10,6 @@ var RootView = Backbone.Marionette.View.extend({
     main: {
       el: "#main-view"
     },
-    routerView: {
-      el: '#router-view'
-    }
   },
   initialize: function(){
     this.render();

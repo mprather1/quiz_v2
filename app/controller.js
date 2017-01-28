@@ -1,5 +1,4 @@
 var Marionette = require('marionette');
-var RouterView = require("./views/RouterView");
 var Quiz = require("./models/Quiz")
 var Quizzes = require("./collections/Quizzes");
 var QuizzesView = require("./views/QuizzesView");
