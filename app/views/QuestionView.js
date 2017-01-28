@@ -1,6 +1,5 @@
 var Answers = require("../collections/Answers");
 var AnswersView = require("./AnswersView");
-var Point = require("../models/Point")
 
 var QuestionView = Backbone.Marionette.View.extend({
   tagName: 'li',
@@ -12,7 +11,6 @@ var QuestionView = Backbone.Marionette.View.extend({
       that.showChildView('answers', new AnswersView({ collection: this }))
     });
     this.listenTo(Backbone, 'submit:answer', this.totalPoints)
-    this.listenTo(Backbone, 'correct:answer', this.correctAnswer)
   },
   regions: {
     answers: {
