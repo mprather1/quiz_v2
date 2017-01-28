@@ -14,7 +14,7 @@ curl http://127.0.0.1:8000/api/models
 curl http://127.0.0.1:8000/api/models/:id
 
 #POST models
-curl -H "Content-Type: application/json" -X POST -d '{"name":"killbill"}' http://127.0.0.1:8000/api/models
+curl -H "Content-Type: application/json" -X POST -d '{"title":"test1"}' http://127.0.0.1:8000/api/quizzes
 
 #PUT models
 curl -H "Content-Type: application/json" -X PUT -d '{"name":"Kill Bill"}' http://127.0.0.1:8000/api/models/2

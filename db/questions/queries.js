@@ -1,7 +1,7 @@
 var db = require("../init");
 
 function createQuestion(req, res, next){
-  db.none('insert into questions(content, _quiz)' + 'values($1, $2)', [req.body.content, req.params.id])
+  db.none('insert into questions(content, points, _quiz)' + 'values($1, $2, $3)', [req.body.content, req.body.points, req.params.id])
   .then(function(data){
     res.status(200)
     .json({

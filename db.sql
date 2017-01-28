@@ -14,6 +14,7 @@ VALUES ('Test Number 1');
 CREATE TABLE questions (
   ID SERIAL PRIMARY KEY,
     content VARCHAR,
+    points INTEGER DEFAULT 1,
     _quiz INTEGER
 );
   
@@ -82,6 +83,7 @@ CREATE TABLE quizzes (
 CREATE TABLE questions (
   ID SERIAL PRIMARY KEY,
     content VARCHAR,
+    points INTEGER DEFAULT 1,
     _quiz INTEGER
 );
 
@@ -105,6 +107,7 @@ CREATE TABLE quizzes (
 CREATE TABLE questions (
   ID SERIAL PRIMARY KEY,
     content VARCHAR,
+    points INTEGER DEFAULT 1,
     _quiz INTEGER
 );
 

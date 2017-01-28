@@ -4,12 +4,14 @@ var Quizzes = require("./collections/Quizzes");
 var QuizzesView = require("./views/QuizzesView");
 var SingleQuizView = require("./views/SingleQuizView")
 var style = require("./public/css/style.scss");
+var Points = require("./collections/Points");
 
 var Controller = Marionette.Object.extend({
   
   initialize: function(options){
     
     window.app = options.app;
+    window.app.points = new Points()
     
     this.quizzes = new Quizzes();
   },

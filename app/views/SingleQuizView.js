@@ -5,6 +5,7 @@ var SingleQuizView = Backbone.Marionette.View.extend({
   tagName: 'p',
   template: require("../templates/singlequiz-view-template.html"),
   initialize: function(){
+    this.totalPoints = 0
     this.collection = new Questions({ _quiz: this.model })
     this.collection.on('sync', function(){
       window.singlequizView.showChildView('questions', new QuestionsView({ collection: this }))   
@@ -30,6 +31,13 @@ var SingleQuizView = Backbone.Marionette.View.extend({
   },
   handleClick: function(){
     Backbone.trigger('submit:answer')
+    window.app.points.forEach(function(data){
+      this.totalPoints += data.get('point')
+    }, this)
+    var avg = (this.totalPoints / this.collection.length) * 100
+    var total = this.totalPoints + "/" + this.collection.length
+    $('.total-points').append(total).removeClass('hidden')
+    $('.average-points').append(avg + "%").removeClass('hidden')
   }    
 
 });
