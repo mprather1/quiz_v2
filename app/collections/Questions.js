@@ -8,11 +8,10 @@ var Questions = Backbone.Collection.extend({
   },
   totalPoints: function(){
     this.totalPossiblePoints = 0;    
-    var that = this;
     this.forEach(function(data){
-      that.totalPossiblePoints += data.get('points');
-    });
-    return that.totalPossiblePoints;
+      this.totalPossiblePoints += data.get('points');
+    }, this);
+    return this.totalPossiblePoints;
   }
 });
 

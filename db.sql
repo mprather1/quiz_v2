@@ -11,6 +11,9 @@ CREATE TABLE quizzes (
 INSERT INTO quizzes ( title )
 VALUES ('Test Number 1');
 
+INSERT INTO quizzes ( title )
+VALUES ('Test Number 2');
+
 CREATE TABLE questions (
   ID SERIAL PRIMARY KEY,
     content VARCHAR,
@@ -23,9 +26,9 @@ VALUES ('2 + 2 = ?', 1, 2);
 INSERT INTO questions ( content, _quiz )
 VALUES ('2 + 8 = ?', 1);
 INSERT INTO questions ( content, _quiz )
-VALUES ('12 + 4 = ?', 1);
+VALUES ('12 + 4 = ?', 2);
 INSERT INTO questions ( content, _quiz )
-VALUES ('3 + 18 = ?', 1);
+VALUES ('3 + 18 = ?', 2);
 
 CREATE TABLE answers (
   ID SERIAL PRIMARY KEY,
