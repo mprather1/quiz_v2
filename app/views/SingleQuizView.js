@@ -5,11 +5,11 @@ var SingleQuizView = Backbone.Marionette.View.extend({
   tagName: 'p',
   template: require("../templates/singlequiz-view-template.html"),
   initialize: function(){
-    this.totalPoints = 0
-    this.collection = new Questions({ _quiz: this.model })
+    this.totalPoints = 0;
+    this.collection = new Questions({ _quiz: this.model });
     this.collection.on('sync', function(){
-      window.singlequizView.showChildView('questions', new QuestionsView({ collection: this }))   
-    })
+      window.singlequizView.showChildView('questions', new QuestionsView({ collection: this })) ;  
+    });
   },
   events: {
     'click .submit-answer': 'handleClick'
@@ -21,23 +21,23 @@ var SingleQuizView = Backbone.Marionette.View.extend({
     }
   },
   onRender: function(){
-    var questions = this.collection
+    var questions = this.collection;
     questions.fetch({
       success: function(data){
-        console.log("Successfully fetched " + data.length + " models at /quizzes/" + data._quiz.get('id') + '/questions')
+        console.log("Successfully fetched " + data.length + " models at /quizzes/" + data._quiz.get('id') + '/questions');
       }
-    })      
+    });     
 
   },
   handleClick: function(){
-    Backbone.trigger('submit:answer')
+    Backbone.trigger('submit:answer');
     window.app.points.forEach(function(data){
-      this.totalPoints += data.get('point')
-    }, this)
-    var avg = (this.totalPoints / this.collection.length) * 100
-    var total = this.totalPoints + "/" + this.collection.length
-    $('.total-points').append(total).removeClass('hidden')
-    $('.average-points').append(avg + "%").removeClass('hidden')
+      this.totalPoints += data.get('point');
+    }, this);
+    var avg = (this.totalPoints / this.collection.length) * 100;
+    var total = this.totalPoints + "/" + this.collection.length;
+    $('.total-points').append(total).removeClass('hidden');
+    $('.average-points').append(avg + "%").removeClass('hidden');
   }    
 
 });
