@@ -1,5 +1,6 @@
 var Answers = require("../collections/Answers");
 var AnswersView = require("./AnswersView");
+var Point = require("../models/Point");
 
 var QuestionView = Backbone.Marionette.View.extend({
   tagName: 'li',
@@ -8,9 +9,8 @@ var QuestionView = Backbone.Marionette.View.extend({
     this.answers = new Answers({ _question: this.model });
     var that = this;
     this.answers.on('sync', function(){
-      that.showChildView('answers', new AnswersView({ collection: this }));
+      that.showChildView('answers', new AnswersView({ collection: this, points: that.model.get('points') }));
     });
-    this.listenTo(Backbone, 'submit:answer', this.totalPoints);
   },
   regions: {
     answers: {
@@ -24,7 +24,7 @@ var QuestionView = Backbone.Marionette.View.extend({
         console.log("Successfully fetched " + data.length + " models at /questions/" + data._question.get('id') + '/answers');
       }
     });
-  },
+  }
 });
 
 module.exports = QuestionView;

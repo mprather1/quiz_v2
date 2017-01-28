@@ -34,8 +34,8 @@ var SingleQuizView = Backbone.Marionette.View.extend({
     window.app.points.forEach(function(data){
       this.totalPoints += data.get('point');
     }, this);
-    var avg = (this.totalPoints / this.collection.length) * 100;
-    var total = this.totalPoints + "/" + this.collection.length;
+    var avg = (this.totalPoints / this.collection.totalPoints()) * 100;
+    var total = this.totalPoints + "/" + this.collection.totalPoints();
     $('.total-points').append(total).removeClass('hidden');
     $('.average-points').append(avg + "%").removeClass('hidden');
   }    

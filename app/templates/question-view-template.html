@@ -1,2 +1,6 @@
-<%- content %>
+<%- content %> <% if (points > 1){ %>
+(<%= points %> points)
+<% } else { %>
+(<%= points %> point)
+<% } %>
 <div class="answers-view"></div>

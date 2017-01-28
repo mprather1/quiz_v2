@@ -18,8 +18,8 @@ CREATE TABLE questions (
     _quiz INTEGER
 );
   
-INSERT INTO questions ( content, _quiz )
-VALUES ('2 + 2 = ?', 1);
+INSERT INTO questions ( content, _quiz, points )
+VALUES ('2 + 2 = ?', 1, 2);
 INSERT INTO questions ( content, _quiz )
 VALUES ('2 + 8 = ?', 1);
 INSERT INTO questions ( content, _quiz )
