@@ -29,44 +29,45 @@ VALUES ('3 + 18 = ?', 1);
 CREATE TABLE answers (
   ID SERIAL PRIMARY KEY,
     content VARCHAR,
+    correct BOOLEAN,
     _question INTEGER
 );
   
-INSERT INTO answers ( content, _question )
-VALUES ('6', 1);
-INSERT INTO answers ( content, _question )
-VALUES ('4', 1);
-INSERT INTO answers ( content, _question )
-VALUES ('28', 1);
-INSERT INTO answers ( content, _question )
-VALUES ('1232423', 1);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('6', 1, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('4', 1, true);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('28', 1, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('1232423', 1, false);
 
-INSERT INTO answers ( content, _question )
-VALUES ('23', 2);
-INSERT INTO answers ( content, _question )
-VALUES ('232234', 2);
-INSERT INTO answers ( content, _question )
-VALUES ('10', 2);
-INSERT INTO answers ( content, _question )
-VALUES ('345657', 2);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('23', 2, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('232234', 2, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('10', 2, true);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('345657', 2, false);
 
-INSERT INTO answers ( content, _question )
-VALUES ('45', 3);
-INSERT INTO answers ( content, _question )
-VALUES ('26', 3);
-INSERT INTO answers ( content, _question )
-VALUES ('16', 3);
-INSERT INTO answers ( content, _question )
-VALUES ('3453', 3);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('45', 3, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('26', 3, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('16', 3, true);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('3453', 3, false);
 
-INSERT INTO answers ( content, _question )
-VALUES ('67', 4);
-INSERT INTO answers ( content, _question )
-VALUES ('14', 4);
-INSERT INTO answers ( content, _question )
-VALUES ('12', 4);
-INSERT INTO answers ( content, _question )
-VALUES ('21', 4);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('67', 4, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('14', 4, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('12', 4, false);
+INSERT INTO answers ( content, _question, correct )
+VALUES ('21', 4, true);
 
 DROP DATABASE IF EXISTS api_test;
 CREATE DATABASE api_test;
@@ -87,6 +88,7 @@ CREATE TABLE questions (
 CREATE TABLE answers (
   ID SERIAL PRIMARY KEY,
     content VARCHAR,
+    correct BOOLEAN,
     _question INTEGER
 );
 
@@ -109,5 +111,6 @@ CREATE TABLE questions (
 CREATE TABLE answers (
   ID SERIAL PRIMARY KEY,
     content VARCHAR,
+    correct BOOLEAN,
     _question INTEGER
 );
