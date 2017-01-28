@@ -26,8 +26,7 @@ var SingleQuizView = Backbone.Marionette.View.extend({
       success: function(data){
         console.log("Successfully fetched " + data.length + " models at /quizzes/" + data._quiz.get('id') + '/questions');
       }
-    });     
-
+    }); 
   },
   handleClick: function(){
     Backbone.trigger('submit:answer');
@@ -36,10 +35,14 @@ var SingleQuizView = Backbone.Marionette.View.extend({
     }, this);
     var avg = (this.totalPoints / this.collection.totalPoints()) * 100;
     var total = this.totalPoints + "/" + this.collection.totalPoints();
-    $('.total-points').append(total).removeClass('hidden');
-    $('.average-points').append(avg + "%").removeClass('hidden');
+    $('.total-points').html("Total: " + total).removeClass('hidden');
+    $('.average-points').html("Average: " + avg + "%").removeClass('hidden');
+    $('.submit-answer').addClass('hidden');
+    window.app.points.reset();
+    this.totalPoints = 0;
+    avg = 0;
+    total = 0;
   }    
-
 });
 
 module.exports = SingleQuizView;
