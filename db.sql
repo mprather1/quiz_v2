@@ -23,12 +23,12 @@ CREATE TABLE questions (
   
 INSERT INTO questions ( content, _quiz, points )
 VALUES ('2 + 2 = ?', 1, 2);
-INSERT INTO questions ( content, _quiz )
-VALUES ('2 + 8 = ?', 1);
-INSERT INTO questions ( content, _quiz )
-VALUES ('12 + 4 = ?', 2);
-INSERT INTO questions ( content, _quiz )
-VALUES ('3 + 18 = ?', 2);
+INSERT INTO questions ( content, _quiz, points )
+VALUES ('2 + 8 = ?', 1, 1);
+INSERT INTO questions ( content, _quiz, points )
+VALUES ('12 + 4 = ?', 2, 3);
+INSERT INTO questions ( content, _quiz, points )
+VALUES ('3 + 18 = ?', 2,2);
 
 CREATE TABLE answers (
   ID SERIAL PRIMARY KEY,
