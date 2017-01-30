@@ -73,6 +73,15 @@ VALUES ('12', 4, false);
 INSERT INTO answers ( content, _question, correct )
 VALUES ('21', 4, true);
 
+CREATE TABLE users (
+  ID SERIAL PRIMARY KEY,
+    username VARCHAR,
+    password VARCHAR
+);
+  
+INSERT INTO users ( username, password )
+VALUES ('username', 'password');
+
 DROP DATABASE IF EXISTS api_test;
 CREATE DATABASE api_test;
 
@@ -97,6 +106,12 @@ CREATE TABLE answers (
     _question INTEGER
 );
 
+CREATE TABLE users (
+  ID SERIAL PRIMARY KEY,
+    username VARCHAR,
+    password VARCHAR
+);
+
 DROP DATABASE IF EXISTS api_production;
 CREATE DATABASE api_production;
 
@@ -119,4 +134,10 @@ CREATE TABLE answers (
     content VARCHAR,
     correct BOOLEAN,
     _question INTEGER
+);
+
+CREATE TABLE users (
+  ID SERIAL PRIMARY KEY,
+    username VARCHAR,
+    password VARCHAR
 );

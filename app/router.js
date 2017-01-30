@@ -9,7 +9,8 @@ var Router = Marionette.AppRouter.extend({
   
   appRoutes: {
     "": "index",
-    "quizes/:id": "getSingleQuiz"
+    "quizes/:id": "getSingleQuiz",
+    "login": 'loginForm',
   }
   
 });
