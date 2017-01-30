@@ -1,3 +1,4 @@
+var Cookies = require("js-cookie")
 var NavigationView = Backbone.Marionette.View.extend({
   tagName: 'nav',
   className: 'navbar navbar-inverse',
@@ -7,7 +8,8 @@ var NavigationView = Backbone.Marionette.View.extend({
   template: require("../templates/navigation-view-template.html"),
   serializeData: function(){
     return {
-      "title": this.title
+      "title": this.title,
+      "username": Cookies.get('username')
     };
   }
 });

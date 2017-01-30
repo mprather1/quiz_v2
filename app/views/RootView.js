@@ -1,4 +1,5 @@
 var NavigationView = require("./NavigationView");
+var Cookies = require("js-cookie")
 
 var RootView = Backbone.Marionette.View.extend({
   tagName: 'container-fluid',
